@@ -1,7 +1,7 @@
 # CleanContainersForPipelines
 Cleaning docker containers in GitHub Actions pipelines.
 
-**docker stop *CONTAINER_ID*** command simply stops a running container but you may need to pass container IDs to this container and doing this in pipelines is difficult.
+```docker stop CONTAINER_ID``` simply stops a running container but you may need to pass container IDs to this container and doing this in pipelines is difficult.
 
 You can find some solutions on forums like: ``` docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q) ``` but this will probably fail. The reason is GitHub Actions is looking for a variable called _"docker ps -a -q"_ but obviously this is not a variable, this is the command getting variables.
 
